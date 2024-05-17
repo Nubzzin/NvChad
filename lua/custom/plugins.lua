@@ -1,5 +1,20 @@
 local plugins = {
   {
+    "williamboman/mason.nvim",
+    opts = {
+      ensure_installed = {
+        "clangd",
+        "clang-format",
+        "codelldb",
+        "cpplint",
+        "cpptools",
+        "typescript-language-server",
+        "eslint-lsp",
+        "biome",
+      }
+    }
+  },
+  {
     "nvim-neotest/nvim-nio"
   },
   {
@@ -52,16 +67,6 @@ local plugins = {
       require "custom.configs.lspconfig"
     end,
   },
-  {
-    "williamboman/mason.nvim",
-    opts = {
-      ensure_installed = {
-        "clangd",
-        "clang-format",
-        "codelldb",
-      }
-    }
-  }
 }
 
 return plugins
