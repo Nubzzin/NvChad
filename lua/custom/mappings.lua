@@ -6,9 +6,24 @@ M.dap = {
       "<cmd> DapToggleBreakpoint <CR>",
       "Add breakpoint at line",
     },
-    ["<leader>dr"] = {
+    ["<leader>dc"] = {
       "<cmd> DapContinue <CR>",
-      "Start or continue the debugger",
+      "Debug cpp",
+    },
+    ["<leader>dr"] = {
+      "<cmd> RustDebuggables <CR>",
+      "Debug rust"
+    }
+  }
+}
+
+M.crates = {
+  n = {
+    ["<leader>rcu"] = {
+      function ()
+        require('crates').upgrade_all_crates()
+      end,
+      "update crates"
     }
   }
 }

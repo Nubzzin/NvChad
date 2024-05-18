@@ -11,8 +11,32 @@ local plugins = {
         "typescript-language-server",
         "eslint-lsp",
         "biome",
+        "black",
+        "pyright",
+        "mypy",
+        "ruff",
+        "debugpy",
+        "rust-analyzer",
       }
     }
+  },
+  {
+    "rust-lang/rust.vim",
+    ft = "rust",
+    dependencies = "neovim/nvim-lspconfig",
+    init = function ()
+      vim.g.rustfmt_autosave = 1
+    end
+  },
+  {
+    "simrat39/rust-tools.nvim",
+    ft = "rust",
+    opts = function ()
+      return require "custom.configs.rust-tools"
+    end,
+    config = function(_,opts)
+      require('rust-tools').setup(opts)
+    end,
   },
   {
     "nvim-neotest/nvim-nio"
@@ -48,6 +72,18 @@ local plugins = {
     },
   },
   {
+    "mfussenegger/nvim-dap-python",
+    ft = "python",
+    dependencies = {
+      "mfussenegger/nvim-dap",
+      "mfussenegger/nvim-dap-ui"
+    },
+    config = function (_, opts)
+      local path = "~/.local/share/nvim/mason/packages/debug/venv/bin/python"
+      require("dap-python").setup(path)
+    end
+  },
+  {
     "mfussenegger/nvim-dap",
     config = function (_,_)
       require("core.utils").load_mappings("dap")
@@ -55,6 +91,7 @@ local plugins = {
   },
   {
     "jose-elias-alvarez/null-ls.nvim",
+    ft = {"python"},
     event = "VeryLazy",
     opts = function()
       return require "custom.configs.null-ls"
@@ -66,6 +103,19 @@ local plugins = {
       require "plugins.configs.lspconfig"
       require "custom.configs.lspconfig"
     end,
+  },
+  {
+    "saecki/crates.nvim",
+    dependencies = "hrsh7th/nvim-cmp",
+    ft = {"rust", "toml"},
+    config = function (_, opts)
+      local crates = require('crates')
+      crates.setup(opts)
+      crates.show()
+    end
+  },
+  {
+    "hrsh7th/nvim-cmp",
   },
 }
 
