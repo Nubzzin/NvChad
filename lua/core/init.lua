@@ -44,7 +44,7 @@ opt.timeoutlen = 400
 opt.undofile = true
 
 -- custom
-opt.relativenumber = true
+opt.relativenumber = false
 opt.wrap = false
 
 opt.swapfile = false
@@ -55,7 +55,7 @@ opt.undodir = os.getenv("HOME") .. "/.vim/undodir"
 opt.hlsearch = false
 opt.incsearch = true
 
-opt.scrolloff = 8
+opt.scrolloff = 12
 opt.signcolumn = "yes"
 opt.isfname:append("@-@")
 

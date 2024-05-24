@@ -6,6 +6,7 @@ M.general = {
   i = {
     -- Exit with jk
     ["jk"] = {"<ESC>"},
+    ["JK"] = {"<ESC>"},
     -- go to  beginning and end
     ["<C-b>"] = { "<ESC>^i", "Beginning of line" },
     ["<C-e>"] = { "<End>", "End of line" },
@@ -23,10 +24,10 @@ M.general = {
     ['<C-u>'] = {'<C-u>zz<CR>'},
 
     -- split screen 
-    ["<leader>sv"] = {"<C-w>v"},
-    ["<leader>sh"] = {"<C-w>s"},
-    ["<leader>sm"] = {":MaximizerToggle<CR>"},
-    ["<leader>sx"] = {"<C-w>q"},
+    ["<leader>sv"] = {"<C-w>v", "Split Vertical"},
+    ["<leader>sh"] = {"<C-w>s", "Split horizontal"},
+    ["<leader>sm"] = {":MaximizerToggle<CR>", "MaximizerToggle"},
+    ["<leader>sx"] = {"<C-w>q", "Close Split"},
 
     ["<Esc>"] = { "<cmd> noh <CR>", "Clear highlights" },
     -- switch between windows

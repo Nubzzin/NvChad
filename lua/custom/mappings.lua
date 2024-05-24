@@ -43,11 +43,11 @@ M.general = {
     ["n"] = {"nzzzv"},
     ["N"] = {"Nzzzv"},
 
-    ["<leader>y"] = {"\"+y"},
+    ["<leader>y"] = {"\"+y", "Copiar para clipboard do sistema"},
 
-    ["<leader>d"] = {"\"_d"},
+    ["<leader>d"] = {"\"_d", "Deletar sem troca"},
 
-    ["<leader>s"] = {[[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]]}
+    ["<leader>ss"] = {[[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]], "Trocar palavras iguais"}
   },
   x = {
     ["<learder>p"] = {"\"_dP"},
