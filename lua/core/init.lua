@@ -12,7 +12,7 @@ g.transparency = config.ui.transparency
 opt.laststatus = 3 -- global statusline
 opt.showmode = false
 
-opt.clipboard = "unnamedplus"
+opt.clipboard = "unnamed"
 opt.cursorline = true
 
 -- Indenting
@@ -44,7 +44,7 @@ opt.timeoutlen = 400
 opt.undofile = true
 
 -- custom
-opt.relativenumber = false
+opt.relativenumber = true
 opt.wrap = false
 
 opt.swapfile = false

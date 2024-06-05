@@ -35,13 +35,15 @@ M.general = {
 
     ["<leader>y"] = {"\"+y"},
 
-    ["<leader>d"] = {"\"_d"}
+    ["<leader>d"] = {"\"_d"},
   },
   n = {
     ["J"] = {"mzJ'z"},
 
     ["n"] = {"nzzzv"},
     ["N"] = {"Nzzzv"},
+
+    ["x"] = {"\"_x"},
 
     ["<leader>y"] = {"\"+y", "Copiar para clipboard do sistema"},
 
